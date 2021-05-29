@@ -4,7 +4,7 @@
   "extensions": {
     "endpoints": {
       "PancakeSwap Exchange LITE": {
-        "url": "https://api.bscgraph.org/subgraphs/name/pancakeswap/exchange-lite",
+        "url": "http://182.61.12.9:8000/subgraphs/name/pancakeswap/exchange",
         "headers": {
           "user-agent": "JS GraphQL"
         },

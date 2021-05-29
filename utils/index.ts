@@ -1,15 +1,15 @@
 import BigNumber from "bignumber.js";
-import { BLACKLIST } from "./constants/blacklist";
-import { client } from "./apollo/client";
-import { TOP_PAIRS, PAIRS_VOLUME_QUERY, TOKEN_BY_ADDRESS } from "./apollo/queries";
-import { getBlockFromTimestamp } from "./blocks/queries";
+import {BLACKLIST} from "./constants/blacklist";
+import {client} from "./apollo/client";
+import {PAIRS_VOLUME_QUERY, TOKEN_BY_ADDRESS, TOP_PAIRS} from "./apollo/queries";
+import {getBlockFromTimestamp} from "./blocks/queries";
 import {
-  PairsVolumeQuery,
-  PairsVolumeQueryVariables,
-  TokenQuery,
-  TokenQueryVariables,
-  TopPairsQuery,
-  TopPairsQueryVariables,
+    PairsVolumeQuery,
+    PairsVolumeQueryVariables,
+    TokenQuery,
+    TokenQueryVariables,
+    TopPairsQuery,
+    TopPairsQueryVariables,
 } from "./generated/subgraph";
 
 const TOP_PAIR_LIMIT = 1000;
@@ -43,6 +43,7 @@ export async function getTokenByAddress(address: string): Promise<Token> {
 
 export async function getTopPairs(): Promise<MappedDetailedPair[]> {
   const epochSecond = Math.round(new Date().getTime() / 1000);
+    console.info("epochSecond---->>%s", epochSecond);
   const firstBlock = await getBlockFromTimestamp(epochSecond - 86400);
 
   if (!firstBlock) {

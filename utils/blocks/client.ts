@@ -4,7 +4,7 @@ import fetch from "cross-fetch";
 export const blockClient = new ApolloClient({
   link: new HttpLink({
     fetch,
-    uri: "https://api.thegraph.com/subgraphs/name/pancakeswap/blocks",
+    uri: "http://182.61.12.9:8000/subgraphs/name/pancakeswap/blocks",
   }),
   cache: new InMemoryCache(),
 });

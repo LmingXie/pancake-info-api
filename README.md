@@ -26,7 +26,8 @@ yarn global add vercel
 yarn
 
 # Build project
-vercel dev
+
+vercel dev --listen=3003
 ```
 
 Endpoints are based on filename inside the `api/` folder.
